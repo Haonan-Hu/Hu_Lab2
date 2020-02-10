@@ -1,7 +1,7 @@
 /*
 Author: Haonan Hu
-File: Linked_list.h
-Date:1/30/2020
+File: Linked_List.h
+Date:2/10/2020
 Brief:File is header file
 */
 #ifndef LINKED_LIST_H

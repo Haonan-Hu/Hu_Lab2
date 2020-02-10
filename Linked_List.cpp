@@ -1,11 +1,11 @@
 /*
 Author: Haonan Hu
-File: Linked_list.cpp
-Date:1/30/2020
+File: Linked_List.cpp
+Date:2/10/2020
 Brief:File is cpp file
 */
-#include "Node.h"
-#include "Linked_list.h"
+
+#include "Linked_List.h"
 #include <stdexcept>
 #include <iostream>
 using namespace std;

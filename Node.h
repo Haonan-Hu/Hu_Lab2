@@ -1,7 +1,7 @@
 /*
 Author: Haonan Hu
 File: Node.h
-Date:1/30/2020
+Date:2/10/2020
 Brief:File is header file
 */
 #ifndef NODE_H

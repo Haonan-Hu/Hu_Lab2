@@ -1,7 +1,7 @@
 /*
 Author: Haonan Hu
 File: Node.cpp
-Date:1/30/2020
+Date:2/10/2020
 Brief:File is cpp file
 */
 #include "Node.h"

@@ -14,12 +14,47 @@ Brief:File is header file
 class HashTable
 {
 public:
+  /**
+	* @pre none
+	*	@post creates an empty hashtable
+	*/
   HashTable();
+  /**
+	* @pre none
+	* @post deletes the whole hashtable
+	* @return none
+	*/
   ~HashTable();
-  void addPlayer();
-  void removePlayer();
+  /**
+	* @pre input has to be valid
+	* @post add player at the back of list
+	* @return none
+	*/
+  void addPlayer(string:);
+  /**
+	* @pre the record must be valid
+	* @post remove a player from hashtable
+	* @return none
+	*/
+  void removePlayer(int record);
+  /**
+	* @pre none
+	* @post print all records of the hashtable
+	* @return none
+	*/
   void printPlayersList();
+  void playerWithGoalCountEqualTo();
+  void playerWithNumGoalsGreaterThan();
+  void playerWithNumGoalsLessThan();
 private:
+  int goalCounts;
+  int bucketSize;
+  /**
+	* @pre input must be valid
+	* @post complete the hash value of the index
+	* @return none
+	*/
   hash(int goalCount, int size);
-  
-}
+
+};
+#endif

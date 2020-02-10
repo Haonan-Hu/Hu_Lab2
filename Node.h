@@ -7,10 +7,13 @@ Brief:File is header file
 #ifndef NODE_H
 #define NODE_H
 
+#include <string>
+
 class Node
 {
-	private:
-	int m_entry;
+private:
+	std::string m_playerName;
+	int m_score;
 	Node* m_next;
 
 	public:
@@ -19,24 +22,28 @@ class Node
 	* @post construct an item with given value
 	* @param entry,the value of item
 	*/
-	Node(int entry);
+	Node(int m_score, std::string m_playerName);
 	/**
 	* @pre none
 	* @post set the value of existing item
 	* @param entry, the value of item
 	*/
-	void setEntry(int entry);
+	void setScore(int score);
 	/**
 	* @pre none
 	* @post get the value of a existing item
 	* @return the value of item
 	*/
-	int getEntry()const;
+	int getScore()const;
 	/**
 	* @pre none
 	* @post the the next item of
 	* @return the next item
 	*/
+	void setName(std::string playerName);
+
+	std::string getName()const;
+
 	Node* getNext()const;
 	/**
 	* @pre none

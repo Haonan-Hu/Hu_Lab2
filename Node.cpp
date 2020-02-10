@@ -6,20 +6,31 @@ Brief:File is cpp file
 */
 #include "Node.h"
 
-Node::Node(int entry)
+Node::Node(int score, std::string playerName)
 {
-	m_entry = entry;
+	m_score = score;
+	m_playerName = playerName;
 	m_next = nullptr;
 }
 
-void Node::setEntry(int entry)
+void Node::setScore(int score)
 {
-	m_entry = entry;
+	m_score = score;
 }
 
-int Node::getEntry()const
+int Node::getScore()const
 {
-	return m_entry;
+	return m_score;
+}
+
+void Node::setName(std::string playerName)
+{
+	m_playerName = playerName;
+}
+
+std::string Node::getName()const
+{
+	return m_playerName;
 }
 
 void Node::setNext(Node* next)

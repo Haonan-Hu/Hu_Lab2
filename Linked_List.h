@@ -51,32 +51,14 @@ class LinkedList
 	* @param value of element
 	* @return none
 	*/
-	void Insert(int entry);
+	void Insert(int score, std::string playerName);
 	/**
 	* @pre the list is not empty
 	* @post deletes the entry
 	* @param the value of element
 	* @return none
 	*/
-	void Delete(int entry);
-	/**
-	* @pre the list is not empty
-	* @post deletes all duplicates
-	* @return none
-	*/
-	void DeleteDuplicates();
-	/**
-	* @post find element in the list
-	* @param value of element
-	* @return true if the element is found in the list
-	*/
-	bool Find(int entry);
-	/**
-	* @post find the next element value
-	* @param the value of the element
-	* @return none
-	*/
-	void FindNext(int entry);
+	void Delete(int score, std::string playerName);
 	/**
 	* @pre none
 	* @post get the front node pointer
@@ -90,16 +72,10 @@ class LinkedList
 	*/
 	void Print();
 	/**
-	* @pre none
-	* @post print the reversed list
-	* @return
-	*/
-	void ReverseList();
-	/**
 	* @pre position must be valid
 	* @post print next element at position
 	* @return
 	*/
-	void PrintAt(int positon);
+	void PrintAt(int score);
 };
 #endif

@@ -46,6 +46,9 @@ public:
   void playerWithGoalCountEqualTo(int score);
   void playerWithNumGoalsGreaterThan(int score);
   void playerWithNumGoalsLessThan(int score);
+  bool search(int score, std::string playerName);
+  
+
 private:
   LinkedList* m_arr;
   int m_size;

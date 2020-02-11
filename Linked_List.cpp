@@ -163,14 +163,10 @@ bool LinkedList::searchByName(std::string playerName)
 
 bool LinkedList::searchByNameAndScore(int score, std::string playerName)
 {
+	Node* temp = m_front;
 	if(score < 0)
 	{
 		throw(std::runtime_error("Invalid score.\n\n"));
-	}
-	Node* temp = m_front;
-	if(temp->getNext() == nullptr && temp->getName() == playerName && temp->getScore() == score)
-	{
-		return true;
 	}
 	else
 	{

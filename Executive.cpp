@@ -70,12 +70,52 @@ void executive::run()
     }
     if(choice == 1)
     {
-      m_hash.addPlayer(100, "Haonan");
+      std::string record;
+      std::string name;
+      std::string temp;
+      int score;
+      std::cout << "Enter a record to be inserted: \n\n";
+      std::cin >> record;
+      int index = record.find(':');
+      for(int i = 0; i < index; i++)
+      {
+        name = name + record.at(i);
+      }
+      for(int i = index + 1; i < record.length(); i++)
+      {
+        temp = temp + record.at(i);
+      }
+      score = stoi(temp);
+
+      std::cout << '\n';
+      m_hash.addPlayer(score, name);
+      std::cout << "Output:: Record is successfully inserted.\n";
       std::cout << "..................................\n\n";
     }
     else if(choice == 2)
     {
-      m_hash.removePlayer(62, "Radhi");
+      std::string name;
+      int score;
+      std::cout << "Enter a record with required name to be removed: \n";
+      std::cin >> name;
+      std::cout << '\n';
+      std::cout << "Enter a record with required score to be removed: \n";
+      std::cin >> score;
+      std::cout << '\n';
+      try
+      {
+        if(m_hash.search(score, name))
+        {
+          m_hash.removePlayer(score, name);
+          std::cout << "Player " << name << " has been removed from the hash table.\n";
+        }
+        else
+          std::cout << "No record found\n";
+      }
+      catch(std::runtime_error &rte)
+      {
+        std::cout << rte.what() << '\n';
+      }
       std::cout << "..................................\n\n";
     }
     else if(choice == 3)

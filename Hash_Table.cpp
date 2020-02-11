@@ -110,3 +110,16 @@ void HashTable::playerWithNumGoalsLessThan(int score)
     }
   }
 }
+
+bool HashTable::search(int score, std::string playerName)
+{
+  bool exist = false;
+  for(int i = 0; i < m_size; i++)
+  {
+    if(m_arr[i].searchByNameAndScore(score, playerName))
+    {
+      exist = true;
+    }
+  }
+  return exist;
+}

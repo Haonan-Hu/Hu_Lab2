@@ -71,149 +71,32 @@ void executive::run()
     if(choice == 1) //  Checking empty list
     {
       m_hash.addPlayer(100, "Haonan");
+      std::cout << "..................................\n\n";
     }
     else if(choice == 2) // checking length of the list
     {
       m_hash.removePlayer(62, "Radhi");
+      std::cout << "..................................\n\n";
     }
     else if(choice == 3) // Insert to the list
-    {
-      // int entry;
-      // std::cout << "Choose a number to be inserted: \n\n";
-      // std::cin >> entry;
-      // std::cin.ignore();
-      // std::cout << '\n';
-      // myList.Insert(entry);
-      // if(myList.getFront()->getEntry() == entry)
-      // {
-      //   std::cout << entry << " is inserted.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
-      // else
-      // {
-      //   std::cout << "Insert not successful.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
-    }
-    else if(choice == 4) // Delete from the list
-    {
-      // int entry;
-      // std::cout << "Choose a number to be deleted from the list: \n\n";
-      // std::cin >> entry;
-      // std::cin.ignore();
-      // std::cout << '\n';
-      // if(myList.Find(entry))
-      // {
-      //   try
-      //   {
-      //     myList.Delete(entry);
-      //     std::cout << "The last occurence of " << entry << " has been deleted from the list.\n\n";
-      //     std::cout << "..................................\n\n";
-      //   }
-      //   catch(std::runtime_error &rte)
-      //   {
-      //     std::cout << rte.what() << '\n';
-      //     std::cout << "..................................\n\n";
-      //   }
-      // }
-      // else
-      // {
-      //   std::cout << entry << " is not found in the list.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
-    }
-    else if(choice == 5) //Delete duplicates from the list
-    {
-      // try
-      // {
-      //   myList.DeleteDuplicates();
-      //   std::cout << "Duplicates deleted.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
-      // catch(std::runtime_error &rte)
-      // {
-      //   std::cout << rte.what() << '\n';
-      //   std::cout << "..................................\n\n";
-      // }
-    }
-    else if(choice == 6) // Find element in the list
-    {
-      // int entry;
-      // std::cout << "Enter the number to find: \n\n";
-      // std::cin >> entry;
-      // std::cin.ignore();
-      // std::cout << '\n';
-      // try
-      // {
-      //   if(myList.Find(entry))
-      //   {
-      //     std::cout << entry << " is in the list.\n\n";
-      //     std::cout << "..................................\n\n";
-      //   }
-      //   else
-      //   {
-      //     std::cout << entry << " is not found in the list.\n\n";
-      //     std::cout << "..................................\n\n";
-      //   }
-      // }
-      // catch(std::runtime_error &rte)
-      // {
-      //   std::cout << rte.what() << '\n';
-      //   std::cout << "..................................\n\n";
-      // }
-    }
-    else if(choice == 7)// Find the next element
-    {
-      // int entry;
-      // std::cout << "Enter the number to find its next element: \n\n";
-      // std::cin >> entry;
-      // std::cin.ignore();
-      // std::cout << '\n';
-      // if(!myList.IsEmpty())
-      // {
-      //   myList.FindNext(entry);
-      //   std::cout << "..................................\n\n";
-      // }
-      // else
-      //   std::cout << "The list is Empty.\n\n";
-    }
-    else if(choice == 8) // Print the list
     {
       m_hash.printPlayersList();
       std::cout << "..................................\n\n";
     }
-    else if(choice == 9) //Print the Reverse list
+    else if(choice == 4) // Delete from the list
     {
-      // try
-      // {
-      //   myList.ReverseList();
-      //   std::cout << "..................................\n\n";
-      // }
-      // catch(std::runtime_error &rte)
-      // {
-      //   std::cout << rte.what() << '\n';
-      //   std::cout << "..................................\n\n";
-      // }
+      m_hash.playerWithGoalCountEqualTo(70);
+      std::cout << "..................................\n\n";
     }
-    else if(choice == 10) //Print the element at the given position
+    else if(choice == 5) //Delete duplicates from the list
     {
-      // int position;
-      // std::cout << "Choose a position to print element: \n\n";
-      // std::cin >> position;
-      // std::cin.ignore();
-      // std::cout << '\n';
-      // try
-      // {
-      //   myList.PrintAt(position);
-      //   std::cout << "..................................\n\n";
-      // }
-      // catch(std::runtime_error &rte)
-      // {
-      //   std::cout << rte.what() << '\n';
-      //   std::cout << "..................................\n\n";
-      // }
+
     }
-    else if(choice == 11)
+    else if(choice == 6) // Find element in the list
+    {
+
+    }
+    else if(choice == 7)
     {
       std::cout << "Program execution complete!\n";
       break;

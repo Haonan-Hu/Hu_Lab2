@@ -43,7 +43,7 @@ public:
 	* @return none
 	*/
   void printPlayersList();
-  void playerWithGoalCountEqualTo();
+  void playerWithGoalCountEqualTo(int score);
   void playerWithNumGoalsGreaterThan();
   void playerWithNumGoalsLessThan();
 private:

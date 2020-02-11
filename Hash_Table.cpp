@@ -60,3 +60,21 @@ void HashTable::printPlayersList()
     std::cout << "\n";
   }
 }
+
+void HashTable::playerWithGoalCountEqualTo(int score)
+{
+  int hashIndex = score % 7;
+  Node* temp = m_arr[hashIndex].getFront();
+  if(temp->getScore() == score)//only one node in the list case
+  {
+    std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+  }
+  for(int i = 0; i < m_arr[hashIndex].Length(); i++)
+  {
+    if(temp->getScore() == score)
+    {
+      std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+    }
+    temp = temp->getNext();
+  }
+}

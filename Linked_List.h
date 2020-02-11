@@ -71,12 +71,6 @@ class LinkedList
 	* @return
 	*/
 	void Print();
-	/**
-	* @pre position must be valid
-	* @post print next element at position
-	* @return
-	*/
-	void PrintAt(int score);
 	bool searchByName(std::string playerName);
 	bool searchByNameAndScore(int score, std::string playerName);
 };

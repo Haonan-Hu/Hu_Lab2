@@ -149,22 +149,9 @@ void LinkedList::Print()
 	}
 }
 
-
-void LinkedList::PrintAt(int position)
-{
-	if(position > m_length || position < 1)
-	{
-		throw(std::runtime_error("Invalid position.\n\n"));
-	}
-	else
-	{
-		std::cout << targetNode(position)->getName() << ':' << targetNode(position)->getScore() << "\n\n";
-	}
-}
-
 bool LinkedList::searchByName(std::string playerName)
 {
-	for(int i = 1; i < m_length; i++)
+	for(int i = 1; i <= m_length; i++)
 	{
 		if(targetNode(i)->getName() == playerName)
 		{
@@ -176,6 +163,10 @@ bool LinkedList::searchByName(std::string playerName)
 
 bool LinkedList::searchByNameAndScore(int score, std::string playerName)
 {
+	if(score < 0)
+	{
+		throw(std::runtime_error("Invalid score.\n\n"));
+	}
 	Node* temp = m_front;
 	if(temp->getNext() == nullptr && temp->getName() == playerName && temp->getScore() == score)
 	{

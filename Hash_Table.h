@@ -7,7 +7,7 @@ Brief:File is header file
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
-#include "Linked_list.h"
+#include "Linked_List.h"
 #include <stdexcept>
 #include <iostream>
 
@@ -30,7 +30,7 @@ public:
 	* @post add player at the back of list
 	* @return none
 	*/
-  void addPlayer(string:);
+  void addPlayer();
   /**
 	* @pre the record must be valid
 	* @post remove a player from hashtable
@@ -54,7 +54,7 @@ private:
 	* @post complete the hash value of the index
 	* @return none
 	*/
-  hash(int goalCount, int size);
+  void hash(int goalCount, int size);
 
 };
 #endif

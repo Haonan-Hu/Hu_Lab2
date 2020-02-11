@@ -14,11 +14,13 @@ class executive
 {
 public:
   executive(std::string fileName);
+  LinkedList myList;
   ~executive();
   /**
   * @pre none
   * @post run the user controled panel
   */
   void run();
+
 };
 #endif

@@ -74,9 +74,13 @@ void LinkedList::Insert(int score, std::string playerName) //insert a new node a
 	//	Case2: add new node at the front of list
 	else
 	{
+		Node* frontPtr = m_front;
+		while(frontPtr->getNext() != nullptr)
+		{
+			frontPtr = frontPtr->getNext();
+		}
 		Node* temp = new Node(score, playerName);
-		temp->setNext(m_front);
-		m_front = temp;
+		frontPtr->setNext(temp);
 	}
 	m_length++;
 }
@@ -146,7 +150,14 @@ void LinkedList::Print()
 
 		while (curNode != nullptr)
 		{
-			std::cout << curNode->getName() << ':' << curNode->getScore() << "->";
+			if(curNode->getNext() != nullptr)
+			{
+				std::cout << curNode->getName() << ':' << curNode->getScore() << " -> ";
+			}
+			else
+			{
+				std::cout << curNode->getName() << ':' << curNode->getScore() << "\n";
+			}
 			curNode = curNode->getNext();
 		}
 	  std::cout << "\n\n";
@@ -162,6 +173,6 @@ void LinkedList::PrintAt(int position)
 	}
 	else
 	{
-		std::cout << "The element at the " << position << "th position is: " << targetNode(position)->getScore() << "\n\n";
+		std::cout << targetNode(position)->getName() << ':' << targetNode(position)->getScore() << "\n\n";
 	}
 }

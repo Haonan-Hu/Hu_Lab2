@@ -174,7 +174,7 @@ bool LinkedList::searchByNameAndScore(int score, std::string playerName)
 	}
 	else
 	{
-		while(temp->getNext() != nullptr)
+		for(int i = 0; i < m_length; i++)
 		{
 			if(temp->getName() == playerName && temp->getScore() == score)
 			{

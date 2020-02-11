@@ -44,8 +44,8 @@ public:
 	*/
   void printPlayersList();
   void playerWithGoalCountEqualTo(int score);
-  void playerWithNumGoalsGreaterThan();
-  void playerWithNumGoalsLessThan();
+  void playerWithNumGoalsGreaterThan(int score);
+  void playerWithNumGoalsLessThan(int score);
 private:
   LinkedList* m_arr;
   int m_size;

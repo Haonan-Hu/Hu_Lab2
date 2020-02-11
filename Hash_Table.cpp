@@ -78,3 +78,35 @@ void HashTable::playerWithGoalCountEqualTo(int score)
     temp = temp->getNext();
   }
 }
+
+void HashTable::playerWithNumGoalsGreaterThan(int score)
+{
+  for(int i = 0; i < 7; i++)
+  {
+    Node* temp = m_arr[i].getFront();
+    for(int j = 0; j < m_arr[i].Length(); j++)
+    {
+      if(temp->getScore() >= score)
+      {
+        std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+      }
+      temp = temp->getNext();
+    }
+  }
+}
+
+void HashTable::playerWithNumGoalsLessThan(int score)
+{
+  for(int i = 0; i < 7; i++)
+  {
+    Node* temp = m_arr[i].getFront();
+    for(int j = 0; j < m_arr[i].Length(); j++)
+    {
+      if(temp->getScore() <= score)
+      {
+        std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+      }
+      temp = temp->getNext();
+    }
+  }
+}

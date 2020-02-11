@@ -68,33 +68,35 @@ void executive::run()
       if(!std::cin.fail())
         break;
     }
-    if(choice == 1) //  Checking empty list
+    if(choice == 1)
     {
       m_hash.addPlayer(100, "Haonan");
       std::cout << "..................................\n\n";
     }
-    else if(choice == 2) // checking length of the list
+    else if(choice == 2)
     {
       m_hash.removePlayer(62, "Radhi");
       std::cout << "..................................\n\n";
     }
-    else if(choice == 3) // Insert to the list
+    else if(choice == 3)
     {
       m_hash.printPlayersList();
       std::cout << "..................................\n\n";
     }
-    else if(choice == 4) // Delete from the list
+    else if(choice == 4)
     {
       m_hash.playerWithGoalCountEqualTo(70);
       std::cout << "..................................\n\n";
     }
-    else if(choice == 5) //Delete duplicates from the list
+    else if(choice == 5)
     {
-
+      m_hash.playerWithNumGoalsGreaterThan(70);
+      std::cout << "..................................\n\n";
     }
-    else if(choice == 6) // Find element in the list
+    else if(choice == 6)
     {
-
+      m_hash.playerWithNumGoalsLessThan(70);
+      std::cout << "..................................\n\n";
     }
     else if(choice == 7)
     {

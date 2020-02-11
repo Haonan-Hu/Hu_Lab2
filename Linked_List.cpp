@@ -142,7 +142,7 @@ void LinkedList::Print()
 {
 	if(IsEmpty() == true)
 	{
-		throw(std::runtime_error("The list is empty.\n\n"));
+		std::cout << "The list is empty.\n\n";
 	}
 	else
 	{
@@ -160,7 +160,7 @@ void LinkedList::Print()
 			}
 			curNode = curNode->getNext();
 		}
-	  std::cout << "\n\n";
+	  std::cout << "\n";
 	}
 }
 
@@ -175,4 +175,28 @@ void LinkedList::PrintAt(int position)
 	{
 		std::cout << targetNode(position)->getName() << ':' << targetNode(position)->getScore() << "\n\n";
 	}
+}
+
+bool LinkedList::searchByName(std::string playerName)
+{
+	for(int i = 1; i < m_length; i++)
+	{
+		if(targetNode(i)->getName() == playerName)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool LinkedList::searchByNameAndScore(int score, std::string playerName)
+{
+	for(int i = 1; i < m_length; i++)
+	{
+		if(targetNode(i)->getName() == playerName && targetNode(i)->getScore() == score)
+		{
+			return true;
+		}
+	}
+	return false;
 }

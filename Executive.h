@@ -14,7 +14,7 @@ class executive
 {
 public:
   executive(std::string fileName);
-  LinkedList myList;
+  HashTable m_hash;
   ~executive();
   /**
   * @pre none

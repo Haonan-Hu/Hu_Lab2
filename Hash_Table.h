@@ -30,13 +30,13 @@ public:
 	* @post add player at the back of list
 	* @return none
 	*/
-  void addPlayer();
+  void addPlayer(int score, std::string playerName);
   /**
 	* @pre the record must be valid
 	* @post remove a player from hashtable
 	* @return none
 	*/
-  void removePlayer(int record);
+  void removePlayer(int score);
   /**
 	* @pre none
 	* @post print all records of the hashtable
@@ -47,14 +47,14 @@ public:
   void playerWithNumGoalsGreaterThan();
   void playerWithNumGoalsLessThan();
 private:
-  int goalCounts;
-  int bucketSize;
+  LinkedList* m_arr;
+  int m_size;
   /**
 	* @pre input must be valid
 	* @post complete the hash value of the index
 	* @return none
 	*/
-  void hash(int goalCount, int size);
+  int hash(int score);
 
 };
 #endif

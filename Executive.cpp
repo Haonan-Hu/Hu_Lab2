@@ -21,7 +21,7 @@ executive::executive(std::string fileName)
     while(infile >> data) // make sure file input is valid
     {
       infile >> goal;
-      myList.Insert(goal, data);
+      m_hash.addPlayer(goal, data);
     }
     infile.close();
   }
@@ -189,16 +189,8 @@ void executive::run()
     }
     else if(choice == 8) // Print the list
     {
-      try
-      {
-        myList.Print();
-        std::cout << "..................................\n\n";
-      }
-      catch(std::runtime_error &rte)
-      {
-        std::cout << rte.what() << '\n';
-        std::cout << "..................................\n\n";
-      }
+      m_hash.printPlayersList();
+      std::cout << "..................................\n\n";
     }
     else if(choice == 9) //Print the Reverse list
     {

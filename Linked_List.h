@@ -77,5 +77,7 @@ class LinkedList
 	* @return
 	*/
 	void PrintAt(int score);
+	bool searchByName(std::string playerName);
+	bool searchByNameAndScore(int score, std::string playerName);
 };
 #endif

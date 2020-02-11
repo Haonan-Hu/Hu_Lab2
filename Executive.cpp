@@ -70,21 +70,11 @@ void executive::run()
     }
     if(choice == 1) //  Checking empty list
     {
-      // if(myList.IsEmpty() == true)
-      // {
-      //   std::cout << "The list is empty.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
-      // else
-      // {
-      //   std::cout << "The list is not empty.\n\n";
-      //   std::cout << "..................................\n\n";
-      // }
+      m_hash.addPlayer(100, "Haonan");
     }
     else if(choice == 2) // checking length of the list
     {
-      // std::cout << "The length of the list is: " << myList.Length() << "\n\n";
-      // std::cout << "..................................\n\n";
+      m_hash.removePlayer(62, "Radhi");
     }
     else if(choice == 3) // Insert to the list
     {

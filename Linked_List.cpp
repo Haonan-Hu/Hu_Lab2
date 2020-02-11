@@ -94,39 +94,24 @@ void LinkedList::Delete(int score, std::string playerName)
 	}
 	else
 	{
-		//	Case1: Only one node in the list and the node needs to be deleted
-		if(m_front->getNext() == nullptr && m_front->getScore() == score)
+		//	Case: Only one node in the list and the node needs to be deleted
+		if(m_front->getNext() == nullptr && m_front->getScore() == score && m_front->getName() == playerName)
 		{
 			m_front = nullptr;
 		}
 		//	Case2: multiple nodes in the list
 		else
 		{
-			if(m_front->getNext() != nullptr && m_front->getScore() != score)
+			for(int i = m_length; i > 0;i--)	//	Searching target from the back
 			{
-				bool flag = false;	// a flag for making sure only one duplicate will be deleted
-				for(int i = m_length; i > 0;i--)	//	Searching target from the back
+				Node* temp = targetNode(i);
+				if(temp->getScore() == score && temp->getName() == playerName) //	Found target from the back
 				{
-					Node* temp = targetNode(i);
-					if(temp->getScore() == score) //	Found target from the back
-					{
-						Node* prevNode = targetNode(i - 1);
-						prevNode->setNext(temp->getNext());
-						temp->setNext(nullptr);
-						delete temp;
-						flag = true;
-					}
-					if(flag) // activate flag if one duplicate deleted
-					{
-						break;
-					}
+					Node* prevNode = targetNode(i - 1);
+					prevNode->setNext(temp->getNext());
+					temp->setNext(nullptr);
+					delete temp;
 				}
-			}
-			else
-			{
-				Node* temp = m_front;
-				m_front = m_front->getNext();
-				delete temp;
 			}
 		}
 		m_length--;
@@ -191,12 +176,21 @@ bool LinkedList::searchByName(std::string playerName)
 
 bool LinkedList::searchByNameAndScore(int score, std::string playerName)
 {
-	for(int i = 1; i < m_length; i++)
+	Node* temp = m_front;
+	if(temp->getNext() == nullptr && temp->getName() == playerName && temp->getScore() == score)
 	{
-		if(targetNode(i)->getName() == playerName && targetNode(i)->getScore() == score)
-		{
-			return true;
-		}
+		return true;
 	}
-	return false;
+	else
+	{
+		while(temp->getNext() != nullptr)
+		{
+			if(temp->getName() == playerName && temp->getScore() == score)
+			{
+				return true;
+			}
+			temp = temp->getNext();
+		}
+		return false;
+	}
 }

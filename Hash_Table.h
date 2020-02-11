@@ -36,7 +36,7 @@ public:
 	* @post remove a player from hashtable
 	* @return none
 	*/
-  void removePlayer(int score);
+  void removePlayer(int score, std::string playerName);
   /**
 	* @pre none
 	* @post print all records of the hashtable

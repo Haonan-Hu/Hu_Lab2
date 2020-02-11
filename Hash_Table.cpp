@@ -42,9 +42,18 @@ void HashTable::addPlayer(int score, std::string playerName)
     std::cout << "The player has already exist\n";
 }
 
+void HashTable::removePlayer(int score, std::string playerName)
+{
+  int hashIndex = score % 7;
+  if(m_arr[hashIndex].searchByNameAndScore(score, playerName))
+  {
+    m_arr[hashIndex].Delete(score, playerName);
+  }
+}
+
 void HashTable::printPlayersList()
 {
-  for(int i=0;i<m_size;i++)
+  for(int i = 0; i < m_size; i++)
   {
     std::cout << i << ": -> ";
     m_arr[i].Print();

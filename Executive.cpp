@@ -8,6 +8,7 @@ Brief:File is cpp file
 #include <stdexcept>
 #include <fstream>
 #include <iostream>
+#include <limits>
 
 executive::executive(std::string fileName)
 {
@@ -51,7 +52,7 @@ void executive::run()
       if(std::cin.fail())
       {
         std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Wrong input!\n\n";
         std::cout << "..................................\n\n";
         std::cout << "Choose one operation from the options below: \n\n";
@@ -125,17 +126,29 @@ void executive::run()
     }
     else if(choice == 4)
     {
-      m_hash.playerWithGoalCountEqualTo(70);
+      int score;
+      std::cout << "Enter the Goal count: \n";
+      std::cin >> score;
+      std::cout << '\n';
+      m_hash.playerWithGoalCountEqualTo(score);
       std::cout << "..................................\n\n";
     }
     else if(choice == 5)
     {
-      m_hash.playerWithNumGoalsGreaterThan(70);
+      int score;
+      std::cout << "Enter the Goal count: \n";
+      std::cin >> score;
+      std::cout << '\n';
+      m_hash.playerWithNumGoalsGreaterThan(score);
       std::cout << "..................................\n\n";
     }
     else if(choice == 6)
     {
-      m_hash.playerWithNumGoalsLessThan(70);
+      int score;
+      std::cout << "Enter the Goal count: \n";
+      std::cin >> score;
+      std::cout << '\n';
+      m_hash.playerWithNumGoalsLessThan(score);
       std::cout << "..................................\n\n";
     }
     else if(choice == 7)

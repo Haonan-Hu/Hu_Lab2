@@ -64,23 +64,26 @@ void HashTable::printPlayersList()
 void HashTable::playerWithGoalCountEqualTo(int score)
 {
   int hashIndex = score % 7;
+  bool exist = false;
   Node* temp = m_arr[hashIndex].getFront();
-  if(temp->getScore() == score)//only one node in the list case
-  {
-    std::cout << temp->getName() << ':' << temp->getScore() << '\n';
-  }
   for(int i = 0; i < m_arr[hashIndex].Length(); i++)
   {
     if(temp->getScore() == score)
     {
       std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+      exist = true;
     }
     temp = temp->getNext();
+  }
+  if(!exist)
+  {
+    std::cout << "No players found" << '\n';
   }
 }
 
 void HashTable::playerWithNumGoalsGreaterThan(int score)
 {
+  bool exist = false;
   for(int i = 0; i < 7; i++)
   {
     Node* temp = m_arr[i].getFront();
@@ -89,14 +92,20 @@ void HashTable::playerWithNumGoalsGreaterThan(int score)
       if(temp->getScore() >= score)
       {
         std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+        exist = true;
       }
       temp = temp->getNext();
     }
+  }
+  if(!exist)
+  {
+    std::cout << "No players found" << '\n';
   }
 }
 
 void HashTable::playerWithNumGoalsLessThan(int score)
 {
+  bool exist = false;
   for(int i = 0; i < 7; i++)
   {
     Node* temp = m_arr[i].getFront();
@@ -105,9 +114,14 @@ void HashTable::playerWithNumGoalsLessThan(int score)
       if(temp->getScore() <= score)
       {
         std::cout << temp->getName() << ':' << temp->getScore() << '\n';
+        exist = true;
       }
       temp = temp->getNext();
     }
+  }
+  if(!exist)
+  {
+    std::cout << "No players found" << '\n';
   }
 }
 

@@ -15,14 +15,28 @@ executive::executive(std::string fileName)
   std::ifstream infile;
   infile.open(fileName);
   std::string data;
+  std::string name;
+  std::string temp;
+  int score;
 
   if(infile.is_open())  //  file read successful
   {
-    int goal;
-    while(infile >> data) // make sure file input is valid
+    while(std::getline(infile, data)) // make sure file input is valid
     {
-      infile >> goal;
-      m_hash.addPlayer(goal, data);
+      int index = data.find(':');
+      for(int i = 0; i < index; i++)
+      {
+        name = name + data.at(i);
+      }
+      for(int i = index + 1; i < data.length(); i++)
+      {
+        temp = temp + data.at(i);
+      }
+      std::cout << temp << '\n';
+      score = stoi(temp);
+      m_hash.addPlayer(score, name);
+      name = "";
+      temp = "";
     }
     infile.close();
   }
